@@ -1,12 +1,12 @@
 import React from 'react'
 import { Header } from './Header'
 
-export const HeaderContainer = () => {
-    const total = 100;
+export const HeaderContainer = ({ dataCart, setDataCart }) => {
+
 
     return (
         <>
-            <Header total={total} />
+            <Header dataCart={dataCart} setDataCart={setDataCart} />
         </>
     )
 }

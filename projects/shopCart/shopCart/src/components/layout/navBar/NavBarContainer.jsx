@@ -2,12 +2,12 @@ import React from 'react'
 
 import { NavBar } from './NavBar'
 
-export const NavBarContainer = ({ total }) => {
+export const NavBarContainer = ({ dataCart, setDataCart }) => {
 
 
     return (
         <>
-            <NavBar total={total} />
+            <NavBar dataCart={dataCart} setDataCart={setDataCart} />
         </>
     )
 }
