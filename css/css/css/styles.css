@@ -1,0 +1,230 @@
+#titulo {
+    color: blanchedalmond;
+}
+
+p.especial {
+    color: mediumseagreen;
+}
+
+p.texto {
+    color: tomato;
+}
+
+div p {
+    color: aquamarine;
+}
+
+div h2,
+div h3 {
+    color: brown;
+}
+
+* {
+    font-size: 24px;
+    color: black;
+}
+
+/* Este es un comentario en CSS es importante para poder dar entender que es lo que se esta escribiendo en el codigo */
+
+/* 
+    Este es un comentario que tiene muchas lineasssssssssssssssssssssssssss
+
+
+*/
+
+/* .color {
+    color: #FF0000;
+    .color {
+        color: rgb(0, 255, 255);
+    }
+
+    .color {
+        border: .3125rem black inset;
+            dotted
+            dashed
+            solid
+            double
+            groove
+            ridge
+            indet 
+            outset
+            none
+            hidden
+    }
+
+} */
+
+.color {
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    border-width: 2rem;
+}
+
+#background {
+    /*     background-color: rgba(255, 0, 0);
+    background-image: url('../OIG1.jpeg');
+    background-size: 100px 100px;
+    background-repeat: repeat-y;
+    background-position: center bottom;
+     */
+    background: #f00 url('../OIG1.jpeg') repeat-y center bottom / 100px 100px;
+    /* background-size: 100px 100px; */
+    height: 300px;
+
+}
+
+.margin {
+    background-color: brown;
+    margin: 15px;
+    padding: 30px 15px 5px;
+    border: solid 1px black;
+    height: 100px;
+    width: 200px;
+    overflow: scroll;
+    outline: 1px solid red;
+}
+
+.txt {
+    text-align: justify;
+    text-decoration: overline;
+    text-shadow: 3px 5px 5px blue;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:link {
+    color: blueviolet;
+}
+
+a:visited {
+    color: aquamarine;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: #f00;
+}
+
+ul {
+    background-color: cyan;
+    /* list-style: none; */
+    /* list-style-type: georgian; */
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: solid 1px black;
+    padding: 5px;
+}
+
+th {
+    background-color: tomato;
+    color: white;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    /* even es inpar y odd es par */
+    background-color: #eee;
+}
+
+tr:hover {
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    max-width: 300px;
+    background-color: aquamarine;
+    /* display: none; */
+    /* visibility: hidden; */
+    /* Manera de hacer no visibles los elementos */
+}
+
+.inline {
+    display: inline;
+}
+
+.position {
+    /* position: relative; */
+    /* Posicion relativa a donde deberia estar posicionada un elemento */
+    /* position: fixed; */
+    /* Indica que debe tener una posicion pero con respecto a lo que estamos viendo en el explorador */
+    /* position: absolute; */
+    /* Se posiciona relativamente con el elemtnto padre mas cercano que tenga */
+    position: sticky;
+    /* Entrega una mezcla entre relative y fixed */
+    left: 100px;
+    top: 200px;
+    right: 50px;
+}
+
+.left {
+    float: left;
+    /* Toma el elemento del html y dependiendo del container padre los hara flotar hacia la posicion que se le indique
+    */
+    width: 200px;
+    height: 200px;
+
+
+}
+
+.right {
+    float: right;
+}
+
+/* Maneras de centrar un elemento */
+.center-element {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+/* Grid maneja dos dimensiones verticales y horizontales */
+.continer-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px 10em 1fr;
+    margin: 80px auto;
+    width: 90%;
+    height: 400px;
+    max-width: 500px;
+    outline: 4px solid;
+    border: 1px solid black
+}
+
+.child-1 {
+    grid-column: 1/7;
+    grid-row: 1/4;
+    background-color: #f00;
+}
+
+.child-2 {
+    background-color: aqua;
+    grid-column: 2/7;
+    grid-row: 2/4;
+}
+
+.child-3 {
+    background-color: green;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.child-4 {
+    background-color: blue;
+    grid-column: 4/5;
+    grid-row: 1/2;
+}

@@ -1,12 +1,12 @@
-import React from 'react'
+import { CounterType } from "../../../types/types"
 
-export const Counter = ({ id, quantity, increaseQuantity, decraseQuantity }) => {
+export const Counter = ({ id, quantity, dispatch }: CounterType) => {
     return (
         <>
             <button
                 type="button"
                 className="btn btn-dark"
-                onClick={() => decraseQuantity(id)}
+                onClick={() => dispatch({ type: 'decraseQuantity', payload: { id } })}
             >
                 -
             </button>
@@ -14,7 +14,7 @@ export const Counter = ({ id, quantity, increaseQuantity, decraseQuantity }) => 
             <button
                 type="button"
                 className="btn btn-dark"
-                onClick={() => increaseQuantity(id)}
+                onClick={() => dispatch({ type: 'increaseQuantity', payload: { id } })}
             >
                 +
             </button>

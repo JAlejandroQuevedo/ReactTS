@@ -13,13 +13,17 @@ export type CartState = {
     cart: CartItem[]
 }
 
-
+const initialCart = (): CartItem[] => {
+    const localStorageCart = localStorage.getItem('cart');
+    return localStorageCart ? JSON.parse(localStorageCart) : []
+}
 export const initialState: CartState = {
     data: db,
-    cart: []
+    cart: initialCart(),
+
 }
-const MIN_ITEMS = 1;
-const MAX_ITEMS = 5;
+
+
 export const cartReducer = (
     state: CartState = initialState,
     action: CartActions
@@ -31,7 +35,7 @@ export const cartReducer = (
         if (dataExists) {
             updatedCart = state.cart.map(item => {
                 if (item.id === action.payload.item.id) {
-                    if (item.quantity < MIN_ITEMS) {
+                    if (item.quantity < 1) {
                         return { ...item, quantity: item.quantity + 1 }
                     } else {
                         return item
@@ -58,20 +62,43 @@ export const cartReducer = (
     }
 
     if (action.type === 'decraseQuantity') {
+        const cart = state.cart.map(item => {
+            if (item.id === action.payload.id && item.quantity > 1) {
+                return {
+                    ...item,
+                    quantity: item.quantity - 1
+                }
+            }
+            return item
+        })
         return {
-            ...state
+            ...state,
+            cart
         }
     }
 
     if (action.type === 'increaseQuantity') {
+        const stock = 5;
+        const cart = state.cart.map(item => {
+            if (item.id === action.payload.id && item.quantity < stock) {
+                return {
+                    ...item,
+                    quantity: item.quantity + 1
+                }
+            }
+            return item
+        })
         return {
-            ...state
+            ...state,
+            cart
         }
     }
 
     if (action.type === 'cleanCart') {
+        const cart: CartItem[] = []
         return {
-            ...state
+            ...state,
+            cart
         }
     }
 

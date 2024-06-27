@@ -22,12 +22,15 @@ export type CartItem = Omit<TGuitar, 'description'> & {
 export type HeaderProps = {
     dataCart: CartItem[],
     dispatch: Dispatch<CartActions>,
-    increaseQuantity: (id: TGuitar['id']) => void,
-    decraseQuantity: (id: TGuitar['id']) => void,
-    cleanCart: () => void
 }
 
 export type NavBarProps = HeaderProps & {
     isEmpty: boolean,
     cartTotal: number
+}
+
+export type CounterType = {
+    id: number,
+    quantity: any,
+    dispatch: Dispatch<CartActions>
 }

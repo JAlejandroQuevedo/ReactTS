@@ -7,10 +7,7 @@ export const NavBar = (
         dataCart,
         isEmpty,
         cartTotal,
-        dispatch,
-        increaseQuantity,
-        decraseQuantity,
-        cleanCart
+        dispatch
     }: NavBarProps
 ) => {
     /* TIPOS DE FRAGMENTS 
@@ -27,9 +24,6 @@ export const NavBar = (
                 isEmpty={isEmpty}
                 cartTotal={cartTotal}
                 dispatch={dispatch}
-                increaseQuantity={increaseQuantity}
-                decraseQuantity={decraseQuantity}
-                cleanCart={cleanCart}
             />
         </nav>
     )

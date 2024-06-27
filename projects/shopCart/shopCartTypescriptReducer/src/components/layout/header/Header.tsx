@@ -6,9 +6,6 @@ export const Header = (
     {
         dataCart,
         dispatch,
-        increaseQuantity,
-        decraseQuantity,
-        cleanCart
     }: HeaderProps
 ) => {
 
@@ -28,9 +25,7 @@ export const Header = (
                         isEmpty={isEmpty}
                         cartTotal={cartTotal}
                         dispatch={dispatch}
-                        increaseQuantity={increaseQuantity}
-                        decraseQuantity={decraseQuantity}
-                        cleanCart={cleanCart} />
+                    />
                 </div>
             </div>
         </header>

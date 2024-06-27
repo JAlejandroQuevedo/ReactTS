@@ -6,10 +6,7 @@ export const Cart = (
         dataCart,
         isEmpty,
         cartTotal,
-        dispatch,
-        increaseQuantity,
-        decraseQuantity,
-        cleanCart
+        dispatch
     }: NavBarProps
 ) => {
     return (
@@ -45,8 +42,7 @@ export const Cart = (
                                                 <Counter
                                                     id={id}
                                                     quantity={quantity}
-                                                    increaseQuantity={increaseQuantity}
-                                                    decraseQuantity={decraseQuantity}
+                                                    dispatch={dispatch}
                                                 />
                                             </td>
                                             <td>
@@ -67,7 +63,7 @@ export const Cart = (
                         </>
                     }
                     <button className="btn btn-dark w-100 mt-3 p-2"
-                        onClick={cleanCart}
+                        onClick={() => dispatch({ type: 'cleanCart' })}
                     >Vaciar Carrito</button>
                 </div>}
         </div >
