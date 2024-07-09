@@ -2,10 +2,10 @@ import { useContext } from "react"
 import { BudgetContext } from "../context/budget/BudgetContext"
 
 export const useBudget = () => {
-    const context = useContext(BudgetContext)
-    if (!context) {
+    const stateBudget = useContext(BudgetContext)
+    if (!stateBudget) {
         throw new Error('use budget must be used within a Provider')
     }
 
-    return context
+    return stateBudget
 }

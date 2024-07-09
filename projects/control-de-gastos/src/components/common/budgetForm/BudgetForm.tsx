@@ -1,13 +1,15 @@
-import { useMemo, useState } from "react"
+import { useMemo, useState } from "react";
 import { useBudget } from "../../../hooks/useBudget";
+import { useKeyDown } from "../../../hooks/useKeyDown";
+
 
 
 export const BudgetForm = () => {
     const [budget, setBudget] = useState(0);
     const { dispatch } = useBudget()
-
+    const { handleKeyDown } = useKeyDown()
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setBudget(e.target.valueAsNumber)
+        setBudget(+e.target.value)
     }
 
     const isValid = useMemo(() => {
@@ -27,12 +29,13 @@ export const BudgetForm = () => {
                 </label>
                 <input
                     id="budget"
-                    type="number"
+                    type="text"
                     className="w-full bg-[white] border border-[gray] p-[20px] rounded-[10px] outline-none hover: bg-[#f2f2f2f2] hover:border-none cursor-pointer hover:p-2,w-full"
                     placeholder="Define tu presupuesto"
                     name="budget"
-                    value={budget}
+                    // value={budget}
                     onChange={handleChange}
+                    onKeyDown={handleKeyDown}
                 />
             </div>
             <input
