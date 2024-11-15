@@ -1,5 +1,5 @@
-import { Header } from "./components/layout/header/Header"
-import { Main } from "./components/pages/main/Main"
+import { Header } from "./components/layout/Header/Header"
+import { Main } from "./components/pages/Main/Main"
 
 
 

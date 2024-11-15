@@ -3,6 +3,7 @@ import { BudgetForm } from "../../common/BudgetForm/BudgetForm"
 import { useBudget } from "../../../hooks/useBudget"
 import { BudgetTracker } from "../Tracker/BudgetTracker"
 import { ExpenseModal } from "../../common/ExpenseModal/ExpenseModal"
+import { ExpenseList } from "../../common/ExpenseList/ExpenseList"
 
 
 export const Main = () => {
@@ -16,6 +17,7 @@ export const Main = () => {
             {
                 isBudget && (
                     <div className="max-w-[768px] mx-auto py-[40px]">
+                        <ExpenseList />
                         <ExpenseModal />
                     </div>
                 )

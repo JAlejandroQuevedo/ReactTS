@@ -9,13 +9,18 @@ export const ExpenseModal = () => {
     const { state, dispatch } = useBudget()
     const { handleEsc } = useKeyDown()
     useEffect(() => {
+        if (state.modal === false) {
+            state.editingId = ''
+        }
+
+    }, [state.modal])
+    useEffect(() => {
         document.addEventListener('keydown', handleEsc);
 
         return () => {
             document.removeEventListener('keydown', handleEsc)
         }
     }, [])
-
     return (
         <>
             <div className="fixed right-5 bottom-5 flex items-center justify-center">
@@ -54,7 +59,6 @@ export const ExpenseModal = () => {
                                     <ExpenseForm />
                                 </DialogPanel>
                             </TransitionChild>
-
                         </div>
                     </div>
                 </Dialog>
